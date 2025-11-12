@@ -18,23 +18,35 @@
     <nav>
       <button class="menu-btn" onclick="abrirCaixa('sobre')">Sobre</button>
       <button class="menu-btn" onclick="abrirCaixa('contato')">Contato</button>
+      <button class="menu-btn" onclick="abrirCaixa('Por que?')">Por que?</button>
     </nav>
   </header>
 
   <!-- ==============================
-       MODAIS DE MENU (Sobre e Contato)
+       MENU (Sobre e Contato)
   ================================= -->
-  <!-- MODAL SOBRE -->
+    <!--  SOBRE -->
   <div id="caixa-sobre" class="fundo-modal">
     <div class="modal">
       <button class="fechar" onclick="fecharCaixa('sobre')">X</button>
       <h2>Sobre o Projeto</h2>
       <p>O <strong>Adote um Amigo</strong> é um projeto desenvolvido com o objetivo de incentivar a <strong>adoção responsável</strong> de animais resgatados em áreas de risco e ajudá-los a conseguir um novo lar🐾.</p>
-      <p>Nosso foco é conectar animais especiais, que precisam de um lar, com pessoas dispostas a dar amor e cuidado.</p>
+      <p>Nosso foco é conectar animais especiais, que precisam de um lar, com pessoas dispostas a dar amor e cuidado. Avaliando o perfil de cada interessado e direciona-lo ao melhor companheiro possível, além claro de nos preocupar com pontos especificos para que os animais não voltem a ser abandonados ou sofram maus-tratos novamente.</p>
     </div>
   </div>
 
-  <!-- MODAL CONTATO -->
+  <!--  CONTATO -->
+  <div id="caixa-Por que?" class="fundo-modal">
+    <div class="modal">
+      <button class="fechar" onclick="fecharCaixa('Por que?')">X</button>
+      <h2>Por que fazemos o que fazemos?</h2>
+      <p>📧</a>As ONGs têm papel fundamental na redução do abandono animal. Elas resgatam e reabilitam animais de rua, promovem campanhas de adoção responsável e realizam ações de conscientização sobre guarda e castração. Além disso, colaboram com o poder público e empresas em políticas de controle populacional e bem-estar animal. Com isso, ajudam a diminuir o número de animais nas ruas e fortalecem uma cultura de cuidado e responsabilidade.</p>
+      <p>Nosso papel com o portal "Adote um Amigo" é servir como uma ponte entre as ONGs e os "Novos Tutores", onde faremos todo o processo inicial de adoção dos animais.</p>
+      <p></p>
+    </div>
+  </div>
+
+  <!--  PROBLEMATICA -->
   <div id="caixa-contato" class="fundo-modal">
     <div class="modal">
       <button class="fechar" onclick="fecharCaixa('contato')">X</button>
@@ -44,6 +56,8 @@
       <p>💬 Dúvidas? Fale conosco!</p>
     </div>
   </div>
+
+
 
   <!-- ==============================
        SEÇÃO DE INTRODUÇÃO
@@ -115,7 +129,7 @@
 </div>
 
 <!-- ==============================
-     MODAL DE DETALHES DO ANIMAL
+     DETALHES DO ANIMAL
 ================================= -->
 <div id="fundoModal" class="fundo-modal">
   <div class="modal">
@@ -132,7 +146,6 @@
 </div>
 
 <!-- ==============================
-     JAVASCRIPT
 ================================= -->
 <script>
   // Modal de animais
