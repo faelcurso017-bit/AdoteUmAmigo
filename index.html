@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adote um Amigo</title>
+  <!-- Conexão com o CSS -->
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div class="tudo">
+  <!-- ==============================
+       CABEÇALHO E MENU
+  ================================= -->
+  <header>
+    <h1>Adote um Amigo</h1>
+    <nav>
+      <button class="menu-btn" onclick="abrirCaixa('sobre')">Sobre</button>
+      <button class="menu-btn" onclick="abrirCaixa('contato')">Contato</button>
+    </nav>
+  </header>
+
+  <!-- ==============================
+       MODAIS DE MENU (Sobre e Contato)
+  ================================= -->
+  <!-- MODAL SOBRE -->
+  <div id="caixa-sobre" class="fundo-modal">
+    <div class="modal">
+      <button class="fechar" onclick="fecharCaixa('sobre')">X</button>
+      <h2>Sobre o Projeto</h2>
+      <p>O <strong>Adote um Amigo</strong> é um projeto desenvolvido com o objetivo de incentivar a <strong>adoção responsável</strong> de animais resgatados em áreas de risco e ajudá-los a conseguir um novo lar🐾.</p>
+      <p>Nosso foco é conectar animais especiais, que precisam de um lar, com pessoas dispostas a dar amor e cuidado.</p>
+    </div>
+  </div>
+
+  <!-- MODAL CONTATO -->
+  <div id="caixa-contato" class="fundo-modal">
+    <div class="modal">
+      <button class="fechar" onclick="fecharCaixa('contato')">X</button>
+      <h2>Contato</h2>
+      <p>📧 E-mail: <a href="mailto:AdoteUmAmigo@projeto.gov">contato@projeto.org</a></p>
+      <p>📍 Local: Rua da Adoção - Av. do Adotamento, 762 - Da Silva</p>
+      <p>💬 Dúvidas? Fale conosco!</p>
+    </div>
+  </div>
+
+  <!-- ==============================
+       SEÇÃO DE INTRODUÇÃO
+  ================================= -->
+  <section id="sobre" class="intro">
+    <p><strong>Adote um Amigo</strong> é um projeto feito para incentivar a adoção de animais resgatados de áreas de risco 🐾</p>
+  </section>
+
+  <!-- ==============================
+       ÁREA DE CARDS DE ADOÇÃO
+  ================================= -->
+  <section class="grade">
+    
+    <!-- CARD 1 -->
+    <div class="card" data-nome="Abdul Khasmiri" data-idade="2 anos" data-especie="Gato" data-desc="Abdul Khasmiri é muito curioso e tem um temperamento explosivo.">
+      <img src="https://preview.redd.it/cats-as-talibans-v0-lebm4enl490b1.png?width=640&crop=smart&auto=webp&s=a75b1b719d12096b3e532481d99bd5458b653c54" alt="Abdul Khasmiri">
+      <div class="conteudo">
+        <h3>Abdul Khasmiri</h3>
+        <p>Idade: 2 anos</p>
+        <p>Gato curioso e Alahrmado.</p>
+
+        <div class="botoes">
+          <button class="botao-claro" onclick="abrirModal(this)">Ver</button>
+          <a href="https://forms.gle/WEPEcwc3Y7ZCY84G7" class="botao" target="_blank">Adotar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" data-nome="Oslo" data-idade="1 ano" data-especie="Chacorro" data-desc="Cachorro vodka, gosta de frio e é castrado.">
+      <img src="https://preview.redd.it/dvj2x3qmps441.jpg?width=640&crop=smart&auto=webp&s=96b0d8374c3d28cbf66c42c4a92c5e7d4b72cf15" alt="Oslo">
+      <div class="conteudo">
+        <h3>Oslo</h3>
+        <p>Idade: 1 ano</p>
+        <p>Tranquilo e ideal para restituir impérios antigos.</p>
+
+        <div class="botoes">
+          <button class="botao-claro" onclick="abrirModal(this)">Ver</button>
+          <a href="https://forms.gle/WEPEcwc3Y7ZCY84G7" class="botao" target="_blank">Adotar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card" data-nome="Waguin" data-idade="4 anos" data-especie="Ruindade-Pura" data-desc="Waguin é brincalhão e adora crianças (até demais).">
+      <img src="https://classic.exame.com/wp-content/uploads/2016/09/size_960_16_9_animal35.jpg?resize=920,613" alt="Waguin">
+      <div class="conteudo">
+        <h3>Waguin Ruindade-Pura</h3>
+        <p>Idade: 4 anos</p>
+        <p>Adora crianças (mas não o deixe sozinho com elas).</p>
+
+        <div class="botoes">
+          <button class="botao-claro" onclick="abrirModal(this)">Ver</button>
+          <a href="https://forms.gle/WEPEcwc3Y7ZCY84G7" class="botao" target="_blank">Adotar</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==============================
+       RODAPÉ
+  ================================= -->
+  <footer id="contato">
+    <p>Projeto Escolar — Adoção responsável • Contato: 
+      <a href="mailto:adoteumamigo@projeto.gov">adoteumamigo@projeto.gov</a>
+    </p>
+  </footer>
+</div>
+
+<!-- ==============================
+     MODAL DE DETALHES DO ANIMAL
+================================= -->
+<div id="fundoModal" class="fundo-modal">
+  <div class="modal">
+    <button class="fechar" onclick="fecharModal()">X</button>
+    <h2 id="nomeModal"></h2>
+    <p id="descModal"></p>
+    <p><strong>Requisitos para adoção:</strong></p>
+    <ul>
+      <li>Ter mais de 18 anos</li>
+      <li>Comprovar moradia segura e estável</li>
+      <li>Amor e responsabilidade (Opcional) ter um Avião (Obrigatório)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==============================
+     JAVASCRIPT
+================================= -->
+<script>
+  // Modal de animais
+  function abrirModal(botao) {
+    var card = botao.closest(".card");
+    var nome = card.dataset.nome;
+    var idade = card.dataset.idade;
+    var especie = card.dataset.especie;
+    var desc = card.dataset.desc;
+
+    document.getElementById("nomeModal").innerText = nome + " (" + especie + ")";
+    document.getElementById("descModal").innerText = desc + " Idade: " + idade + ".";
+
+    document.getElementById("fundoModal").style.display = "flex";
+  }
+
+  function fecharModal() {
+    document.getElementById("fundoModal").style.display = "none";
+  }
+
+  document.getElementById("fundoModal").addEventListener("click", function(e){
+    if(e.target === this){ fecharModal(); }
+  });
+
+  // Modais de Sobre e Contato
+  function abrirCaixa(tipo) {
+    document.getElementById("caixa-" + tipo).style.display = "flex";
+  }
+
+  function fecharCaixa(tipo) {
+    document.getElementById("caixa-" + tipo).style.display = "none";
+  }
+
+  document.querySelectorAll('.fundo-modal').forEach(fundo => {
+    fundo.addEventListener('click', function(e) {
+      if (e.target === this) this.style.display = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
