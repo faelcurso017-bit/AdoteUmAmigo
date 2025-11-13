@@ -3,9 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adote um Amigo - Início</title>
+  <link rel="stylesheet" href="css.css">
+
+  <style>
+    /* ===========================
+       ESTILOS GERAIS
+    ============================ */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff4ea, #ffe0d0);
+      color: #4a2f27;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #4a2f27;
+    }
+
+    p {
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.05em;
+      color: #5e463f;
+    }
+
+    header {
+      background-color: #9bdfb1;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    section {
+      padding: 40px 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      background-color: #fff9f5;
+      max-width: 1000px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      color: #389355;
+      margin-bottom: 15px;
+    }
+
+    .imagens {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .imagens img {
+      width: 45%;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    input, select, textarea {
+      width: 80%;
+      max-width: 500px;
+      padding: 12px;
+      border: 2px solid #6bda8e;
+      border-radius: 8px;
+      font-size: 1em;
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #389355;
+    }
+
+    .botao-interesse {
+      margin-top: 25px;
+      padding: 15px 35px;
+      font-size: 1.2em;
+      color: white;
+      background-color: #389355;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .botao-interesse:hover {
+      background-color: #2e7546;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #5e463f;
+    }
+  </style>
+</head>
+
+  <header>
+    <h1>🐾 Adote um Amigo 🐾</h1>
+    <p>Transforme vidas com um gesto de amor — adote, não compre!</p>
+  </header>
+
+  <section>
+    <h2>Por que Adotar?</h2>
+    <p>
+      A adoção é um ato de compaixão e responsabilidade. Cada animal adotado representa uma vida resgatada das ruas, 
+      do abandono ou de situações de risco. Além de ganhar um amigo fiel, você ajuda a reduzir o número de animais sem lar 
+      e contribui para uma sociedade mais humana.
+    </p>
+
+    <div class="imagens">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.bb5q4AXXvG7o5rz8BMkgNAHaHa" alt="Waguin">
+    </div>
+  </section>
+
+  <section>
+    <h2>Cadastre-se como Tutor</h2>
+    <p>
+      Preencha os campos abaixo para começarmos sua jornada como tutor responsável. Suas respostas ajudam a identificar o perfil ideal 
+      de adoção e conectar você ao animal certo.
+    </p>
+
+    <form>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail para contato" required>
+      <select required>
+        <option value="">Tipo de moradia</option>
+        <option value="casa">Casa com quintal</option>
+        <option value="apartamento">Apartamento</option>
+        <option value="sítio">Sítio ou chácara</option>
+      </select>
+      <textarea placeholder="Por que você quer adotar um animal?" required></textarea>
+    </form>
+
+    <!-- BOTÃO QUE REDIRECIONA PARA A SEGUNDA PÁGINA -->
+    <button class="botao-interesse" onclick="entrar()">TENHO INTERESSE</button>
+  </section>
+
+  <footer>
+    © 2025 - Projeto Adote um Amigo | Todos os direitos reservados
+  </footer>
+
+  <script>
+    // Efeito de transição suave antes de trocar de página
+    function entrar() {
+      document.body.style.animation = "fadeOut 0.8s ease-in forwards";
+      setTimeout(() => {
+        // 🔗 Muda para a página principal com os cards
+        window.location.href = "projeto.html";
+      }, 800);
+    }
+
+    // Animação de saída
+    const style = document.createElement("style");
+    style.innerHTML = `
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adote um Amigo</title>
   <!-- Conexão com o CSS -->
-  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="projeto.css">
 </head>
 <body>
 
@@ -18,35 +212,23 @@
     <nav>
       <button class="menu-btn" onclick="abrirCaixa('sobre')">Sobre</button>
       <button class="menu-btn" onclick="abrirCaixa('contato')">Contato</button>
-      <button class="menu-btn" onclick="abrirCaixa('Por que?')">Por que?</button>
     </nav>
   </header>
 
   <!-- ==============================
-       MENU (Sobre e Contato)
+       MODAIS DE MENU (Sobre e Contato)
   ================================= -->
-    <!--  SOBRE -->
+  <!-- MODAL SOBRE -->
   <div id="caixa-sobre" class="fundo-modal">
     <div class="modal">
       <button class="fechar" onclick="fecharCaixa('sobre')">X</button>
       <h2>Sobre o Projeto</h2>
       <p>O <strong>Adote um Amigo</strong> é um projeto desenvolvido com o objetivo de incentivar a <strong>adoção responsável</strong> de animais resgatados em áreas de risco e ajudá-los a conseguir um novo lar🐾.</p>
-      <p>Nosso foco é conectar animais especiais, que precisam de um lar, com pessoas dispostas a dar amor e cuidado. Avaliando o perfil de cada interessado e direciona-lo ao melhor companheiro possível, além claro de nos preocupar com pontos especificos para que os animais não voltem a ser abandonados ou sofram maus-tratos novamente.</p>
+      <p>Nosso foco é conectar animais especiais, que precisam de um lar, com pessoas dispostas a dar amor e cuidado.</p>
     </div>
   </div>
 
-  <!--  CONTATO -->
-  <div id="caixa-Por que?" class="fundo-modal">
-    <div class="modal">
-      <button class="fechar" onclick="fecharCaixa('Por que?')">X</button>
-      <h2>Por que fazemos o que fazemos?</h2>
-      <p>📧</a>As ONGs têm papel fundamental na redução do abandono animal. Elas resgatam e reabilitam animais de rua, promovem campanhas de adoção responsável e realizam ações de conscientização sobre guarda e castração. Além disso, colaboram com o poder público e empresas em políticas de controle populacional e bem-estar animal. Com isso, ajudam a diminuir o número de animais nas ruas e fortalecem uma cultura de cuidado e responsabilidade.</p>
-      <p>Nosso papel com o portal "Adote um Amigo" é servir como uma ponte entre as ONGs e os "Novos Tutores", onde faremos todo o processo inicial de adoção dos animais.</p>
-      <p></p>
-    </div>
-  </div>
-
-  <!--  PROBLEMATICA -->
+  <!-- MODAL CONTATO -->
   <div id="caixa-contato" class="fundo-modal">
     <div class="modal">
       <button class="fechar" onclick="fecharCaixa('contato')">X</button>
@@ -56,8 +238,6 @@
       <p>💬 Dúvidas? Fale conosco!</p>
     </div>
   </div>
-
-
 
   <!-- ==============================
        SEÇÃO DE INTRODUÇÃO
@@ -129,7 +309,7 @@
 </div>
 
 <!-- ==============================
-     DETALHES DO ANIMAL
+     MODAL DE DETALHES DO ANIMAL
 ================================= -->
 <div id="fundoModal" class="fundo-modal">
   <div class="modal">
@@ -146,6 +326,7 @@
 </div>
 
 <!-- ==============================
+     JAVASCRIPT
 ================================= -->
 <script>
   // Modal de animais
